@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .header{
+            background:rgb(116, 224, 73);
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            color: rgb(36, 36, 6);
+        }
+        form{
+            line-height: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        input{
+            padding: 7px;
+            border: none;
+            margin-top: 10px;
+            border-radius: 10px;
+            width: 40%;
+            border: 1.5px solid green;
+        }
+        button{
+            margin-top: 10px;
+            border: none;
+            padding: 5px;
+            width: 30%;
+            border-radius: 3px;
+            background: rgb(66, 172, 66);
+            font-size: 15px;
+            color: rgb(246, 255, 234);
+            cursor: pointer;
+        }
+    </style>
+    <title>input</title>
+</head>
+<body>
+    <div class="header">
+
+        <h1>input</h1>
+    </div>
+
+    <div class="form">
+    <form action="" onsubmit="done(event)">
+        <!-- full name -->
+        <label for="text">Your Name:</label>
+        <input id="text" type="text" name="fullName" placeholder="Full Name" autofocus/>
+        <!-- password -->
+        <label for="password">Your Password:</label>
+        <input id="password" type="password" name="password" placeholder="Password"/>
+        <!-- tel -->
+        <label for="tel">Your Tel</label>
+        <input id="tel" type="Tel" name="Tel"  placeholder="Tel"/>
+        <!-- number -->
+        <label for="number">Your Number</label>
+        <input id="number" type="number" name="number"  placeholder="Number"/>
+        <!-- email -->
+        <label for="email">Your Email</label>
+        <input id="email" type="email" name="email" placeholder="example@gmail.com"/>
+        <!-- color -->
+        <label for="color">Your Color</label>
+        <input id="color" type="color" name="color"/>
+        <!-- date time and hours -->
+        
+        <label for="date">Your Date</label>
+        <input id="date" type="datetime-local" />
+        <!-- file -->
+        <label for="file">Your File</label>
+        <input id="file" type="file" />
+        <!-- url -->
+        <label for="url">Your Url</label>
+        <input id="url" type="url" name="url" placeholder="url">
+        <!-- url -->
+        <label for="range">You Love Code:</label>
+        <input id="range" type="range" name="range"/>
+        <!-- done -->
+
+        <button>Done</button>
+    
+    </form>
+    </div>
+    
+
+    <script>
+        function done(event) {
+            event.preventDefault();
+            console.log('hey');
+        }
+    </script>
+</body>
+</html>
