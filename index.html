@@ -61,6 +61,17 @@
 
         <h1>input</h1>
     </div>
+    <datalist id="country">
+        <option value="Israel" label="country in the Middle East"></option>
+        <option value="France" label="country in Europe"></option>
+        <option value="Brazil" label="country in South America"></option>
+        <option value="Australia" label="country in Oceania"></option>
+        <option value="Greece" label="country in the Balkans"></option>
+        <option value="China" label="country in East Asia"></option>
+        <option value="Danmark" label="country in Europe"></option>
+
+
+    </datalist>
 
     <div class="form">
         <form action="" onsubmit="done(event)">
@@ -74,13 +85,16 @@
             <input type="checkbox" onclick="showPass()" />Show Password
             <!-- tel -->
             <label for="tel">Phone</label>
-            <input id="tel" type="tel" name="phone" placeholder="Tel" />
+            <input id="tel" type="tel" name="phone" placeholder="xx(x)-xxxxxxx" pattern="^(?:(?:(\+?972|\(\+?972\)|\+?\(972\))(?:\s|\.|-)?([1-9]\d?))|(0[23489]{1})|(0[57]{1}[0-9]))(?:\s|\.|-)?([^0\D]{1}\d{2}(?:\s|\.|-)?\d{4})$" required/>
             <!-- number -->
             <label for="number">Number:</label>
             <input id="number" type="number" name="number" placeholder="Number" />
             <!-- email -->
             <label for="email">Email:</label>
             <input id="email" type="email" name="email" placeholder="example@gmail.com" />
+            <!-- country -->
+            <label for="country">Your Country:</label>
+            <input id="country" type="text" list="country" />
             <!-- color -->
             <label for="color">Color:</label>
             <input id="color" type="color" name="color" />
@@ -88,14 +102,16 @@
             <label for="date">Date:</label>
             <input id="date" type="datetime-local" />
             <!-- file -->
-            <label for="file">File:</label>
-            <input id="file" type="file" />
+            <label for="file">Image File:</label>
+            <input id="file" type="image" name="image" multiple />
             <!-- url -->
             <label for="url">Url:</label>
             <input id="url" type="url" name="url" placeholder="url">
             <!-- url -->
             <label for="range">You Love Code:</label>
-            <input id="range" type="range" name="range" />
+            <input id="range" type="range" name="range" min="1" max="10" onchange="show(this.value)" />
+            <span id="range-number">0</span>
+            
             <!-- done -->
 
             <button>Done</button>
@@ -110,6 +126,7 @@
             console.log('hey');
         }
         function showPass() {
+            
             var x = document.querySelector('#password');
             if (x.type === "password") {
                 x.type = "text";
@@ -117,6 +134,11 @@
             } else {
                 x.type = "password";
             }
+        }
+        function show(elInput) {
+            var rangeNumber = document.querySelector('#range-number');
+            // change the number of the range.
+            rangeNumber.innerHTML = elInput;
         }
     </script>
 </body>
