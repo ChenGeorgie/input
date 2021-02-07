@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,14 @@
             box-sizing: border-box;
         }
 
-        .header{
-            background:rgb(116, 224, 73);
+        .header {
+            background: rgb(116, 224, 73);
             font-family: 'Times New Roman', Times, serif;
             text-align: center;
-            color: rgb(36, 36, 6);
+            color: lightgoldenrodyellow;
         }
-        form{
+
+        form {
             line-height: 15px;
             display: flex;
             flex-direction: column;
@@ -23,12 +25,14 @@
             align-items: center;
 
         }
+
         label {
             margin-top: 10px;
             font-weight: bold;
             font-size: 20px;
         }
-        input{
+
+        input {
             padding: 7px;
             border: none;
             margin-top: 10px;
@@ -36,7 +40,8 @@
             width: 40%;
             border: 1.5px solid green;
         }
-        button{
+
+        button {
             margin-top: 10px;
             border: none;
             padding: 5px;
@@ -50,6 +55,7 @@
     </style>
     <title>input</title>
 </head>
+
 <body>
     <div class="header">
 
@@ -57,51 +63,62 @@
     </div>
 
     <div class="form">
-    <form action="" onsubmit="done(event)">
-        <!-- full name -->
-        <label for="text">Your Name:</label>
-        <input id="text" type="text" name="fullName" placeholder="Full Name" autofocus/>
-        <!-- password -->
-        <label for="password">Your Password:</label>
-        <input id="password" type="password" name="password" placeholder="Password"/>
-        <!-- tel -->
-        <label for="tel">Your Tel</label>
-        <input id="tel" type="Tel" name="Tel"  placeholder="Tel"/>
-        <!-- number -->
-        <label for="number">Your Number</label>
-        <input id="number" type="number" name="number"  placeholder="Number"/>
-        <!-- email -->
-        <label for="email">Your Email</label>
-        <input id="email" type="email" name="email" placeholder="example@gmail.com"/>
-        <!-- color -->
-        <label for="color">Your Color</label>
-        <input id="color" type="color" name="color"/>
-        <!-- date time and hours -->
-        
-        <label for="date">Your Date</label>
-        <input id="date" type="datetime-local" />
-        <!-- file -->
-        <label for="file">Your File</label>
-        <input id="file" type="file" />
-        <!-- url -->
-        <label for="url">Your Url</label>
-        <input id="url" type="url" name="url" placeholder="url">
-        <!-- url -->
-        <label for="range">You Love Code:</label>
-        <input id="range" type="range" name="range"/>
-        <!-- done -->
+        <form action="" onsubmit="done(event)">
+            <!-- full name input inside lable less line -->
+            <!-- <label for="text"></label>Name:<input id="text" type="text" name="fullName" placeholder="Full Name" autofocus /></label> -->
+            <label for="text">Full Name:</label>
+            <input id="text" type="text" name="fullName" placeholder="Full Name" autofocus />
+            <!-- password -->
+            <label for="password">Password:</label>
+            <input id="password" type="password" name="password" placeholder="Password" />
+            <input type="checkbox" onclick="showPass()" />Show Password
+            <!-- tel -->
+            <label for="tel">Phone</label>
+            <input id="tel" type="tel" name="phone" placeholder="Tel" />
+            <!-- number -->
+            <label for="number">Number:</label>
+            <input id="number" type="number" name="number" placeholder="Number" />
+            <!-- email -->
+            <label for="email">Email:</label>
+            <input id="email" type="email" name="email" placeholder="example@gmail.com" />
+            <!-- color -->
+            <label for="color">Color:</label>
+            <input id="color" type="color" name="color" />
+            <!-- date time and hours -->
+            <label for="date">Date:</label>
+            <input id="date" type="datetime-local" />
+            <!-- file -->
+            <label for="file">File:</label>
+            <input id="file" type="file" />
+            <!-- url -->
+            <label for="url">Url:</label>
+            <input id="url" type="url" name="url" placeholder="url">
+            <!-- url -->
+            <label for="range">You Love Code:</label>
+            <input id="range" type="range" name="range" />
+            <!-- done -->
 
-        <button>Done</button>
-    
-    </form>
+            <button>Done</button>
+
+        </form>
     </div>
-    
+
 
     <script>
         function done(event) {
             event.preventDefault();
             console.log('hey');
         }
+        function showPass() {
+            var x = document.querySelector('#password');
+            if (x.type === "password") {
+                x.type = "text";
+
+            } else {
+                x.type = "password";
+            }
+        }
     </script>
 </body>
+
 </html>
